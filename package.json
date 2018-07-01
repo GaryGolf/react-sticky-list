@@ -1,0 +1,49 @@
+{
+  "name": "react-sticky-list",
+  "version": "1.0.0",
+  "description": "list with sticky headers",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaryGolf/react-sticky-list.git"
+  },
+  "keywords": [
+    "react",
+    "sticky",
+    "list"
+  ],
+  "author": {
+    "name": "GaryGolf",
+    "email": "garygolf@mail.ru"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GaryGolf/react-sticky-list/issues"
+  },
+  "homepage": "https://github.com/GaryGolf/react-sticky-list#readme",
+  "devDependencies": {
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "awesome-typescript-loader": "^5.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "typescript": "^2.9.2",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
