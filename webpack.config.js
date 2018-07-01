@@ -10,7 +10,7 @@ const PRODUCTION = mode == 'production';
 
 const prodCilentConfig = {
   mode: 'production',
-  entry: './src/client.tsx',
+  entry: './src/index.tsx',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
