@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "outDir": "./dist/",
+    "target": "es5",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "examples"
+  ]
+}
