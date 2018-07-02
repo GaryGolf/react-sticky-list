@@ -1,8 +1,8 @@
 {
   "name": "react-sticky-list",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "list with sticky headers",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "example": "examples"
   },
