@@ -1,7 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -26,22 +24,11 @@ const prodCilentConfig = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      { test: /\.css$/, use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: {
-          loader: 'css-loader',
-          query: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: '[local]__[hash:base64:5]'
-          }
-        }
-      })}
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
     ]
   },
 
   plugins: [
-    new ExtractTextPlugin("styles.css"),
     new CleanWebpackPlugin(['dist']),
     new UglifyJsPlugin(),
     new webpack.DefinePlugin({
