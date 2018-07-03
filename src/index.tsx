@@ -3,7 +3,7 @@ import StickyItem from './item';
 import StickyHeader from './header';
 import Waypoint from 'react-waypoint';
 
-import * as styles from './list.css';
+// import * as s from './list.css';
 
 interface Props {
   className?: string;
@@ -159,14 +159,9 @@ export default class StickyAccordion extends React.Component<Props, State> {
     })
 
     return (
-      <div className={`${styles.accordion} ${className}`}>
-        <button className=""
-          onClick={this.handleButtonClick.bind(this, 'UP')}
-          disabled={this.state.upBtnDisabled}>
-          up
-        </button>
+      <div className={`sticky-list ${className}`}>
         <div>{above}</div>
-        <div className={styles.container} 
+        <div className="sticky-list_container"
           ref={el => {
             this.container = el;
             getScrollContainerRef && getScrollContainerRef(el);
@@ -180,7 +175,23 @@ export default class StickyAccordion extends React.Component<Props, State> {
           disabled={this.state.downBtnDisabled}>
           down
         </button>
+        <style>{styles}</style>
       </div>
     )
   }
 }
+
+const styles = `
+
+.sticky-list {
+  height: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.sticky-list_container {
+  overflow: auto;
+}
+
+`;

@@ -4,7 +4,7 @@
   flex-flow: column nowrap;
   justify-content: space-between;
 }
-.accordion .container {
+.container {
  overflow: auto;
 }
 
