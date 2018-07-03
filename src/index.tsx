@@ -56,7 +56,7 @@ export default class StickyAccordion extends React.Component<Props, State> {
   }
 
   private isHeading = (element:JSX.Element):boolean => 
-      ['h1','h2','h3','h4','h5','h6'].includes(element.type as string);
+      ['h1','h2','h3','h4','h5','h6','header'].includes(element.type as string);
 
   private sortElements = (children):StickyElement[] => 
     React.Children.map(children, (item, idx) => {

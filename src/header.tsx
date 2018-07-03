@@ -28,4 +28,4 @@ const StickyHeader:React.SFC<Props> = props => {
   );
 }
 
-export default StickyHeader 
+export default StickyHeader;
