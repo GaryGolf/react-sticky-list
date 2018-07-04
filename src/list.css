@@ -1,4 +1,4 @@
-.accordion {
+.stickyList {
   height: 300px;
   display: flex;
   flex-flow: column nowrap;
@@ -19,6 +19,7 @@
    width: 85px;
  }
 }
+
 
 
 /* 
