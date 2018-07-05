@@ -3,8 +3,6 @@ import StickyItem from './item';
 import StickyHeader from './header';
 import Waypoint from 'react-waypoint';
 
-// import * as s from './list.css';
-
 interface Props {
   className?: string;
   children: JSX.Element[];

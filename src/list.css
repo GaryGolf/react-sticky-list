@@ -7,6 +7,9 @@
 .container {
  overflow: auto;
 }
+.test {
+  color: red;
+}
 
 @-moz-document url-prefix() { /* FF win */
  .container {
