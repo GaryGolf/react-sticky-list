@@ -1,7 +1,8 @@
 import * as React from 'react';
+import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
-import Waypoint from 'react-waypoint';
+import StickyEdge from './sticky-edge';
 import * as styles from './sticky-list.css';
 
 
@@ -27,7 +28,7 @@ export class StickyList extends React.Component<StickyListProps, State> {
     this.state = { 
       elements: this.sortElements(props.children),
       upBtnDisabled: true,
-      downBtnDisabled: false
+      downBtnDisabled: true
     };
   }
 
@@ -37,23 +38,7 @@ export class StickyList extends React.Component<StickyListProps, State> {
     }
   }
   
-  private handleWaypointPositionChange = ({ idx, position }) => {
-    this.setState((state:State) => {
-      const elements = state.elements.map(item => item.idx == idx ? { ...item, position } : item);
-      return { elements };
-    })
-  }
 
-  private handleHeaderClick = (idx:number) => {
-    if (!this.container) return;
-    const target = this.container.querySelector(`[data-idx="${idx}"]`) as HTMLDivElement;
-    if (!target) return;
-    this.container.scroll({
-      behavior: 'smooth',
-      top: target.offsetTop, 
-      left: 0
-    });
-  }
 
   private isHeading = (element:JSX.Element):boolean => 
       ['h1','h2','h3','h4','h5','h6','header'].includes(element.type as string);
@@ -90,9 +75,26 @@ export class StickyList extends React.Component<StickyListProps, State> {
 
       return { elements: elements.sort((a, b) => a.idx - b.idx) }
     })
+
+  private handleWaypointPositionChange = ({ idx, position }) => {
+    this.setState((state:State) => {
+      const elements = state.elements.map(item => item.idx == idx ? { ...item, position } : item);
+      return { elements };
+    })
+  }
+
+  private handleHeaderClick = (idx:number) => {
+    if (!this.container) return;
+    const target = this.container.querySelector(`[data-idx="${idx}"]`) as HTMLDivElement;
+    if (!target) return;
+    this.container.scroll({
+      behavior: 'smooth',
+      top: target.offsetTop, 
+      left: 0
+    });
+  }
     
   private handleButtonClick = (direction:string) => {
-
     switch(direction) {
       case 'UP' :
         this.container.scrollTo({
@@ -104,18 +106,21 @@ export class StickyList extends React.Component<StickyListProps, State> {
           behavior: 'smooth', left: 0, top: this.container.scrollTop + this.container.clientHeight
         });
     }
-
   }
 
-  private handleContainerScroll = (event:React.UIEvent<HTMLDivElement>) => {
-    const target = event.currentTarget
-    const upBtnDisabled = target.scrollTop == 0;
-    const downBtnDisabled = target.scrollHeight - target.scrollTop == target.clientHeight;
-    this.setState({ upBtnDisabled, downBtnDisabled });
+  private handleScrollEnd = (position:string, isInside:boolean) => {
+    switch(position) {
+      case 'UP' :
+        this.setState({ upBtnDisabled: isInside });
+        break;
+      case 'DOWN' :
+        this.setState({ downBtnDisabled: isInside });
+        break;
+    }
   }
   
   render() {
-
+    const { upBtnDisabled, downBtnDisabled } = this.state;
     const { children, className, getScrollContainerRef } = this.props;
 
     const above = this.state.elements
@@ -158,22 +163,36 @@ export class StickyList extends React.Component<StickyListProps, State> {
       );
     })
 
+    inside.push(
+      <StickyEdge
+        container={this.container}
+        onChange={this.handleScrollEnd.bind(this, 'DOWN')}
+      />
+    );
+    inside.unshift(
+      <StickyEdge
+        container={this.container}
+        onChange={this.handleScrollEnd.bind(this, 'UP')}
+      />
+    );
+
     return (
       <div className={`sticky-list ${className}`}>
+        <button className="sticky-list_button up" 
+          onClick={this.handleButtonClick.bind(this, 'UP')}
+          disabled={upBtnDisabled}>&#770;</button>
         <div>{above}</div>
         <div className="sticky-list_container"
           ref={el => {
             this.container = el;
             getScrollContainerRef && getScrollContainerRef(el);
-          }} 
-          onScroll={this.handleContainerScroll}>
+          }}>
           {inside}
         </div>
         <div>{below}</div>
-        <button className="" 
+        <button className="sticky-list_button down" 
           onClick={this.handleButtonClick.bind(this, 'DOWN')}
-          disabled={this.state.downBtnDisabled}>
-          down
+          disabled={downBtnDisabled}> &#711;
         </button>
         <style>{styles.toString()}</style>
       </div>
