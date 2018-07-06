@@ -24,11 +24,7 @@ const prodCilentConfig = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      { test: /\.css$/, use: [
-        { loader: 'style-loader'}, 
-        { loader: 'css-loader' }
-        ] 
-      }
+      { test: /\.css$/, loader: 'css-loader' }
     ]
   },
 

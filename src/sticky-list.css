@@ -1,14 +1,12 @@
-.stickyList {
+.sticky-list {
   height: 300px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
-.container {
- overflow: auto;
-}
-.test {
-  color: red;
+
+.sticky-list_container {
+  overflow: auto;
 }
 
 @-moz-document url-prefix() { /* FF win */

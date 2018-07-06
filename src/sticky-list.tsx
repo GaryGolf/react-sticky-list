@@ -2,8 +2,10 @@ import * as React from 'react';
 import StickyItem from './item';
 import StickyHeader from './header';
 import Waypoint from 'react-waypoint';
+import * as styles from './sticky-list.css';
 
-interface Props {
+
+export interface StickyListProps {
   className?: string;
   children: JSX.Element[];
   getScrollContainerRef?: (div:HTMLDivElement) => void;
@@ -15,12 +17,12 @@ interface State {
   downBtnDisabled: boolean;
 }
 
-export default class StickyAccordion extends React.Component<Props, State> {
+export class StickyList extends React.Component<StickyListProps, State> {
   static defaultProps = { className: '' };
   private container: HTMLDivElement;
 
 
-  public constructor(props:Props) {
+  public constructor(props:StickyListProps) {
     super(props);
     this.state = { 
       elements: this.sortElements(props.children),
@@ -29,7 +31,7 @@ export default class StickyAccordion extends React.Component<Props, State> {
     };
   }
 
-  public componentWillReceiveProps(nextProps:Props) {
+  public componentWillReceiveProps(nextProps:StickyListProps) {
     if(this.props.children != nextProps.children) {
       this.updateElements(nextProps.children);
     }
@@ -173,23 +175,10 @@ export default class StickyAccordion extends React.Component<Props, State> {
           disabled={this.state.downBtnDisabled}>
           down
         </button>
-        <style>{styles}</style>
+        <style>{styles.toString()}</style>
       </div>
     )
   }
 }
 
-const styles = `
-
-.sticky-list {
-  height: 300px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-}
-
-.sticky-list_container {
-  overflow: auto;
-}
-
-`;
+export default StickyList;
