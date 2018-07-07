@@ -2,7 +2,6 @@ import * as React from 'react';
 import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
-import StickyEdge from './sticky-edge';
 import * as styles from './sticky-list.css';
 
 
@@ -16,8 +15,6 @@ export interface StickyListProps {
 
 interface State {
   elements: StickyElement[];
-  upBtnDisabled: boolean;
-  downBtnDisabled: boolean;
 }
 
 export class StickyList extends React.Component<StickyListProps, State> {
@@ -28,9 +25,7 @@ export class StickyList extends React.Component<StickyListProps, State> {
   public constructor(props:StickyListProps) {
     super(props);
     this.state = { 
-      elements: this.sortElements(props.children),
-      upBtnDisabled: true,
-      downBtnDisabled: true
+      elements: this.sortElements(props.children)
     };
   }
 
@@ -94,31 +89,6 @@ export class StickyList extends React.Component<StickyListProps, State> {
       top: target.offsetTop, 
       left: 0
     });
-  }
-    
-  private handleButtonClick = (direction:string) => {
-    switch(direction) {
-      case 'UP' :
-        this.container.scrollTo({
-          behavior: 'smooth', left: 0, top: this.container.scrollTop - this.container.clientHeight
-        });
-        break;
-      case 'DOWN' :
-        this.container.scrollTo({
-          behavior: 'smooth', left: 0, top: this.container.scrollTop + this.container.clientHeight
-        });
-    }
-  }
-
-  private handleScrollEnd = (position:string, isInside:boolean) => {
-    switch(position) {
-      case 'UP' :
-        this.setState({ upBtnDisabled: isInside });
-        break;
-      case 'DOWN' :
-        this.setState({ downBtnDisabled: isInside });
-        break;
-    }
   }
 
   private handleScrollTop = ({currentPosition}) => {
