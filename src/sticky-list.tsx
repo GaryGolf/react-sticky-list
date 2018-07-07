@@ -9,6 +9,8 @@ import * as styles from './sticky-list.css';
 export interface StickyListProps {
   className?: string;
   children: JSX.Element[];
+  onScrollTop?: (isInside:boolean) => void;
+  onScrollBottom?: (isInside:boolean) => void;
   getScrollContainerRef?: (div:HTMLDivElement) => void;
 }
 
@@ -118,9 +120,18 @@ export class StickyList extends React.Component<StickyListProps, State> {
         break;
     }
   }
+
+  private handleScrollTop = ({currentPosition}) => {
+    const { onScrollTop } = this.props;
+    onScrollTop && onScrollTop(currentPosition == Waypoint.inside);
+  }
+
+  private handleScrollBottom = ({currentPosition}) => {
+    const { onScrollBottom } = this.props;
+    onScrollBottom && onScrollBottom(currentPosition == Waypoint.inside);
+  }
   
   render() {
-    const { upBtnDisabled, downBtnDisabled } = this.state;
     const { children, className, getScrollContainerRef } = this.props;
 
     const above = this.state.elements
@@ -164,36 +175,27 @@ export class StickyList extends React.Component<StickyListProps, State> {
     })
 
     inside.push(
-      <StickyEdge
-        container={this.container}
-        onChange={this.handleScrollEnd.bind(this, 'DOWN')}
+      <Waypoint 
+        scrollableAncestor={this.container} 
+        onPositionChange={this.handleScrollBottom}
       />
     );
+
     inside.unshift(
-      <StickyEdge
-        container={this.container}
-        onChange={this.handleScrollEnd.bind(this, 'UP')}
+      <Waypoint 
+        scrollableAncestor={this.container} 
+        onPositionChange={this.handleScrollTop}
       />
     );
 
     return (
       <div className={`sticky-list ${className}`}>
-        <button className="sticky-list_button up" 
-          onClick={this.handleButtonClick.bind(this, 'UP')}
-          disabled={upBtnDisabled}>&#770;</button>
         <div>{above}</div>
         <div className="sticky-list_container"
-          ref={el => {
-            this.container = el;
-            getScrollContainerRef && getScrollContainerRef(el);
-          }}>
+          ref={el => { this.container = el; getScrollContainerRef && getScrollContainerRef(el); }}>
           {inside}
         </div>
         <div>{below}</div>
-        <button className="sticky-list_button down" 
-          onClick={this.handleButtonClick.bind(this, 'DOWN')}
-          disabled={downBtnDisabled}> &#711;
-        </button>
         <style>{styles.toString()}</style>
       </div>
     )
