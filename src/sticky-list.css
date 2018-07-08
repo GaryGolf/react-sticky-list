@@ -9,23 +9,6 @@
   overflow: auto;
 }
 
-.sticky-list_button {
-  background: transparent;
-  outline: none;
-  border: none;
-  padding: 1rem;
-  font-size: 3rem;
-  cursor: pointer;
-  border: 1px solid silver;
-  border-radius: 7px;
-}
-
-.sticky-list_button:disabled {
-  opacity: .65%;
-  cursor: not-allowed;
-}
-
-
 @-moz-document url-prefix() { /* FF win */
  .sticky-list_container {
    width: 100px;
@@ -37,8 +20,6 @@
    width: 85px;
  }
 }
-
-
 
 
 /* 
