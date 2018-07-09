@@ -8,6 +8,7 @@ import * as styles from './sticky-list.css';
 export interface StickyListProps {
   className?: string;
   children: JSX.Element[];
+  shadows?: boolean;
   onScrollTop?: (isInside:boolean) => void;
   onScrollBottom?: (isInside:boolean) => void;
   getScrollContainerRef?: (div:HTMLDivElement) => void;
@@ -15,17 +16,20 @@ export interface StickyListProps {
 
 interface State {
   elements: StickyElement[];
+  isTop: boolean;
+  isBottom: boolean;
 }
 
 export class StickyList extends React.Component<StickyListProps, State> {
-  static defaultProps = { className: '' };
+  static defaultProps = { className: '', shadows: true };
   private container: HTMLDivElement;
-
 
   public constructor(props:StickyListProps) {
     super(props);
     this.state = { 
-      elements: this.sortElements(props.children)
+      elements: this.sortElements(props.children),
+      isTop: false,
+      isBottom: false
     };
   }
 
@@ -93,16 +97,21 @@ export class StickyList extends React.Component<StickyListProps, State> {
 
   private handleScrollTop = ({currentPosition}) => {
     const { onScrollTop } = this.props;
-    onScrollTop && onScrollTop(currentPosition == Waypoint.inside);
+    const isTop = currentPosition == Waypoint.inside
+    this.setState({ isTop })
+    onScrollTop && onScrollTop(isTop);
   }
 
   private handleScrollBottom = ({currentPosition}) => {
     const { onScrollBottom } = this.props;
+    const isBottom = currentPosition == Waypoint.inside;
+    this.setState({ isBottom });
     onScrollBottom && onScrollBottom(currentPosition == Waypoint.inside);
   }
   
   render() {
-    const { children, className, getScrollContainerRef } = this.props;
+    const { isTop, isBottom } = this.state;
+    const { children, className, shadows, getScrollContainerRef } = this.props;
 
     const above = this.state.elements
       .filter(e => ![Waypoint.inside, Waypoint.below, null].includes(e.position))
@@ -158,10 +167,17 @@ export class StickyList extends React.Component<StickyListProps, State> {
       />
     );
 
+    const conatinerStyle = shadows ? [
+      'sticky-list_container',
+      !isTop && !isBottom ? 'sticky-list_container-bothshadow' : 
+      !isTop ? 'sticky-list_container-topshadow' :
+      !isBottom ? 'sticky-list_container-bottomshadow' : ''
+    ].join(' ') : 'sticky-list_container';
+
     return (
       <div className={`sticky-list ${className}`}>
         <div>{above}</div>
-        <div className="sticky-list_container"
+        <div className={conatinerStyle}
           ref={el => { this.container = el; getScrollContainerRef && getScrollContainerRef(el); }}>
           {inside}
         </div>

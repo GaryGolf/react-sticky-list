@@ -1,5 +1,5 @@
 .sticky-list {
-  height: 300px;
+  height: 170px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -7,6 +7,34 @@
 
 .sticky-list_container {
   overflow: auto;
+  -ms-overflow-style: none;
+}
+
+
+.sticky-list_container-bothshadow {
+  border-top: 2px solid transparent;
+  background: radial-gradient(at top, rgba(0,0,0,.2), transparent 75%) 0 0 / 100% .4rem,
+              radial-gradient(at bottom, rgba(0,0,0,.2), transparent 75%) bottom / 100% .4rem;
+  background-repeat: no-repeat;
+  background-attachment: scroll scroll;
+}
+
+.sticky-list_container-topshadow {
+  border-top: 2px solid transparent;
+  background: radial-gradient(ellipse at top, rgba(0,0,0,.2), transparent 75%) 0 0 / 100% .4rem;
+  background-repeat: no-repeat;
+}
+
+.sticky-list_container-bottomshadow {
+  border-top: 2px solid transparent;
+  background: radial-gradient(ellipse at bottom, rgba(0,0,0,.2), transparent 75%) bottom / 100% .4rem;
+  background-repeat: no-repeat;
+}
+
+
+
+.sticky-list_container::-webkit-scrollbar { 
+  width: 0 !important 
 }
 
 @-moz-document url-prefix() { /* FF win */
