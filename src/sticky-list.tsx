@@ -38,8 +38,6 @@ export class StickyList extends React.Component<StickyListProps, State> {
       this.updateElements(nextProps.children);
     }
   }
-  
-
 
   private isHeading = (element:JSX.Element):boolean => 
       ['h1','h2','h3','h4','h5','h6','header'].includes(element.type as string);
