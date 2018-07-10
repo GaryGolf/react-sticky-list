@@ -1,6 +1,7 @@
 # React Sticky List
 
 [![Release](https://img.shields.io/github/GaryGolf/react-sticky-list.svg)](https://www.npmjs.com/package/react-sticky-list)
+[![Size](https://img.shields.io/github/size/GaryGolf/react-sticky-list/dist/index.js.svg)](https://www.npmjs.com/package/react-sticky-list)
 
 ## Motivation
 
