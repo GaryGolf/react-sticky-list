@@ -9,13 +9,13 @@
 #### Usage
 
 ```jsx
-import  ScrollList from 'react-scroll-list';
+import  StickyList from 'react-sticky-list';
   return (
-    <ScrollList>
+    <StickyList>
       <header>Soft Dirinks</header>
       <div>Cola</div>
       <div>cold Tea</div>
-    </ScrollList>
+    </StickyList>
   );
 ```
 
