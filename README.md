@@ -1,10 +1,8 @@
 # React Sticky List
 
-[![version](https://badge.fury.io/js/react-scroll-list.svg)](https://www.npmjs.com/package/react-sticky-list)
-
-![GitHub package version](https://img.shields.io/github/package-json/v/GaryGolf/react-sticky-list.svg?style=social)
-
-![Github All Releases](https://img.shields.io/github/downloads/GaryGolf/react-sticky-list/total.svg?style=social)
+![GitHub package version](https://img.shields.io/github/package-json/v/GaryGolf/react-sticky-list.svg?style=plastic)
+![GitHub tag](https://img.shields.io/github/tag/GaryGolf/react-sticky-list.svg?style=plastic)
+![Github All Releases](https://img.shields.io/github/downloads/GaryGolf/react-sticky-list/total.svg?style=plastic)
 
 ## Motivation
 
