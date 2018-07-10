@@ -1,5 +1,7 @@
 # React Sticky List
 
+[![Npm Package](https://img.shields.io/npm/v/react-sticky-list.svg?style=flat-square)](https://www.npmjs.com/package/react-sticky-list)
+
 ## Motivation
 
 ## Scroll List
