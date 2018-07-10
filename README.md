@@ -1,10 +1,10 @@
 # React Sticky List
 
-[![Npm Package](https://img.shields.io/npm/v/react-sticky-list.svg?style=flat-square)](https://www.npmjs.com/package/react-sticky-list)
+[![Release](https://img.shields.io/github/GaryGolf/react-sticky-list.svg)](https://www.npmjs.com/package/react-sticky-list)
 
 ## Motivation
 
-## Scroll List
+#### Usage
 
 ```jsx
 import  ScrollList from 'react-scroll-list';
