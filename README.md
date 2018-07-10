@@ -1,8 +1,8 @@
 # React Sticky List
 
 ![GitHub package version](https://img.shields.io/github/package-json/v/GaryGolf/react-sticky-list.svg?style=plastic)
-![GitHub tag](https://img.shields.io/github/tag/GaryGolf/react-sticky-list.svg?style=plastic)
-![Github All Releases](https://img.shields.io/github/downloads/GaryGolf/react-sticky-list/total.svg?style=plastic)
+![GitHub issues](https://img.shields.io/github/issues/GaryGolf/react-sticky-list.svg?style=plastic)
+
 
 ## Motivation
 
