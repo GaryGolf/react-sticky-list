@@ -1,7 +1,7 @@
 {
   "name": "react-sticky-list",
   "version": "0.1.0",
-  "description": "list with sticky headers",
+  "description": "Scrollable list with sticky headers",
   "main": "dist/index.js",
   "directories": {
     "example": "examples"
@@ -18,7 +18,11 @@
   "keywords": [
     "react",
     "sticky",
-    "list"
+    "component",
+    "scrollbox",
+    "scrollbar",
+    "list",
+    "menu"
   ],
   "author": {
     "name": "GaryGolf",
@@ -41,8 +45,8 @@
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
   },
-  "dependencies": {
-    "react": "^16.4.1",
-    "react-waypoint": "^8.0.2"
+  "peerDependencies": {
+    "react": ">=16.4.1",
+    "react-waypoint": ">=8.0.2"
   }
 }
