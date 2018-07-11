@@ -15,6 +15,7 @@ import  StickyList from 'react-sticky-list';
       <header>Soft Dirinks</header>
       <div>Cola</div>
       <div>cold Tea</div>
+      <div>Sprite</div>
     </StickyList>
   );
 ```
