@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StickyElement } from '../index';
 
 interface Props { 
   element: StickyElement;

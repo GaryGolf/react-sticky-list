@@ -3,7 +3,15 @@ import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
 import * as styles from './sticky-list.css';
-import { StickyListProps, StickyElement } from '../index'
+
+export interface StickyListProps {
+  className?: string;
+  children: JSX.Element[];
+  shadows?: boolean;
+  onScrollTop?: (isInside:boolean) => void;
+  onScrollBottom?: (isInside:boolean) => void;
+  getScrollContainerRef?: (div:HTMLDivElement) => void;
+}
 
 interface State {
   elements: StickyElement[];

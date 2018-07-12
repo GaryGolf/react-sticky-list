@@ -24,7 +24,8 @@ const prodCilentConfig = {
   },
 
   externals: {
-    react: 'react',
+    'react': 'react',
+    'react-waypoint': 'react-waypoint'
   }
 };
 
