@@ -7,7 +7,10 @@
     "target": "es5",
     "baseUrl": "./src",
     "experimentalDecorators": true,
-    "lib": ["esnext", "dom"]
+    "removeComments": true,
+    "declaration": false,
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
   "include": ["./src/**/*"],
   "exclude": [
