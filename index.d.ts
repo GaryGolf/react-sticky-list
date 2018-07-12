@@ -45,3 +45,5 @@ declare namespace StickyList {
     getScrollContainerRef?: (div:HTMLDivElement) => void;
   }
 }
+
+declare module 'react-sticky-list'
