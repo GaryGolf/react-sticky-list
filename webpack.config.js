@@ -1,10 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-const mode = process.env.NODE_ENV;
-const PRODUCTION = mode == 'production';
 
 const prodCilentConfig = {
   mode: 'production',
@@ -28,13 +23,9 @@ const prodCilentConfig = {
     ]
   },
 
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(true)
-    })
-  ]
+  externals: {
+    react: 'react',
+  }
 };
 
 module.exports = prodCilentConfig;

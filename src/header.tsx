@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Waypoint from 'react-waypoint';
+import { StickyElement, StickyPosition } from '../index';
 
 interface Props {
   element: StickyElement;
