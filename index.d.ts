@@ -24,7 +24,7 @@ declare namespace StickyList {
      * <h1 - h6> or <header> for sticky headers
      * <div> for element items
      */
-    chidren: JSX.Element[];
+    children: JSX.Element[];
 
     /**
      * Function called when scroll container reaches or leaves the top end
