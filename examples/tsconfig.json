@@ -3,14 +3,11 @@
     "sourceMap": true,
     "module": "commonjs",
     "jsx": "react",
-    "outDir": "./build/",
+    "outDir": "../../dist/",
     "target": "es5",
     "baseUrl": "./src",
-    "experimentalDecorators": true,
-    "removeComments": true,
-    "declaration": false,
     "lib": ["esnext", "dom"]
   },
   "include": ["./src/**/*"],
-  "exclude": ["build", "node_modules"]
+  "exclude": ["../../dist", "../../node_modules"]
 }
