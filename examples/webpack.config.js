@@ -7,17 +7,17 @@ const mode = process.env.NODE_ENV;
 
 module.exports = {
   mode: 'development',
-  entry: './src/client.tsx',
+  entry: './examples/src/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "../dist"),
     historyApiFallback: true,
     compress: true,
     hot: true,
@@ -27,7 +27,12 @@ module.exports = {
   module: {
     rules: [
    
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      { test: /\.tsx?$/, 
+        loader: 'awesome-typescript-loader',
+        options: {
+          configFileName: path.join(__dirname, "tsconfig.json")
+        }
+      },
       { test: /\.css$/, use: [ { loader: 'style-loader' } ,
         { loader: 'css-loader', options: {
           module: true,
@@ -39,7 +44,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({ template: path.join(__dirname, './src/index.html') }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
