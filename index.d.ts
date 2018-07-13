@@ -1,5 +1,17 @@
 import * as React from 'react';
 
+export interface StickyElement {
+  idx: number;
+  position: string;
+  component: JSX.Element;
+}
+
+export interface StickyPosition {
+  idx: number;
+  position: string;
+}
+
+
 declare class StickyList extends React.Component<StickyList.StickyListProps, {}> {}
 
 export default StickyList;

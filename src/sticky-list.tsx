@@ -3,6 +3,7 @@ import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
 import * as styles from './sticky-list.css';
+import { StickyElement } from '../index';
 
 export interface StickyListProps {
   className?: string;
