@@ -1,56 +1,5 @@
 [
   {
-    "header": "Appetizers",
-    "items": [
-      {
-        "title": "Focaccia",
-        "description": "White pizza with olive oil, fresh rosemary and sea salt",
-        "price": 8.5
-      },{
-        "title": "Mozzarella in Carozza",
-        "description": "Fried Mozzarella with anchovies. garlic and cream sauce",
-        "price": 6.5
-      },{
-        "title": "Sardine Sandwich",
-        "description": "Italian sardines dressed in olive oil",
-        "new": true,
-        "price": 4
-      },{
-        "title": "",
-        "price": 0
-      }
-    ]
-  },{
-    "header": "Salads",
-    "items": [
-      {
-        "title": "Caperse Salad",
-        "description": "Ripe tomato with fresh mozzarella and basil",
-        "price": 7.5
-      },{
-        "title": "Arugula Salad",
-        "description": "Fresh baby arugula tossed with candied walnuts, roasted beets, dried cranberries & an Asiago Frico in a special house mustard dressing",
-        "price": 9.5
-      }
-    ]
-  },{
-    "header": "Subs Etc.",
-    "items": [
-      {
-        "title": "The Hero",
-        "description": "Breaded or Grilled Chicken topped with Ham, Swiss, Mayo, Mustard, Lettuce",
-        "price": 6.79
-      },{
-        "title": "Chicken Pesto",
-        "description": "Basil pesto, provolone, sliced tomatoes, romano cheese and mixed greens",
-        "price": 7.95
-      },{
-        "title": "The Italian Classic",
-        "description": "Prosciutto, fresh mozzarella, tomato, arugula, and house oil and vinegar dressing",
-        "price": 11.5
-      }
-    ]
-  },{
     "header": "Wood-fried Pizza",
     "items": [
       {
@@ -101,6 +50,54 @@
         "title": "Very Vegan",
         "description": "Crimini mushrooms, roasted garlic, tomatoes, soy cheese",
         "price": 14.75
+      }
+    ]
+  },{
+    "header": "Appetizers",
+    "items": [
+      {
+        "title": "Focaccia",
+        "description": "White pizza with olive oil, fresh rosemary and sea salt",
+        "price": 8.5
+      },{
+        "title": "Mozzarella in Carozza",
+        "description": "Fried Mozzarella with anchovies. garlic and cream sauce",
+        "price": 6.5
+      },{
+        "title": "Sardine Sandwich",
+        "description": "Italian sardines dressed in olive oil",
+        "novelty": true,
+        "price": 4
+      }
+    ]
+  },{
+    "header": "Salads",
+    "items": [
+      {
+        "title": "Caperse Salad",
+        "description": "Ripe tomato with fresh mozzarella and basil",
+        "price": 7.5
+      },{
+        "title": "Arugula Salad",
+        "description": "Fresh baby arugula tossed with candied walnuts, roasted beets, dried cranberries & an Asiago Frico in a special house mustard dressing",
+        "price": 9.5
+      }
+    ]
+  },{
+    "header": "Subs Etc.",
+    "items": [
+      {
+        "title": "The Hero",
+        "description": "Breaded or Grilled Chicken topped with Ham, Swiss, Mayo, Mustard, Lettuce",
+        "price": 6.79
+      },{
+        "title": "Chicken Pesto",
+        "description": "Basil pesto, provolone, sliced tomatoes, romano cheese and mixed greens",
+        "price": 7.95
+      },{
+        "title": "The Italian Classic",
+        "description": "Prosciutto, fresh mozzarella, tomato, arugula, and house oil and vinegar dressing",
+        "price": 11.5
       }
     ]
   }
