@@ -20,6 +20,7 @@ const prodCilentConfig = {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       { test: /\.css$/, loader: 'css-loader' }
+      { test: /\.json$/, loader: 'json-loader' }
     ]
   },
 
