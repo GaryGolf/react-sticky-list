@@ -2,8 +2,9 @@ import * as React from 'react';
 import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
-import * as styles from './sticky-list.css';
 import { StickyElement } from '../index';
+
+import './sticky-list.css';
 
 export interface StickyListProps {
   className?: string;
@@ -180,7 +181,6 @@ export class StickyList extends React.Component<StickyListProps, State> {
           {inside}
         </div>
         <div>{below}</div>
-        <style>{styles.toString()}</style>
       </div>
     )
   }
