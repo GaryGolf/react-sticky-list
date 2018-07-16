@@ -33,13 +33,17 @@ module.exports = {
           configFileName: path.join(__dirname, "tsconfig.json")
         }
       },
-      { test: /\.css$/, use: [ { loader: 'style-loader' } ,
-        { loader: 'css-loader', options: {
-          module: true,
-          sourceMap: true,
-          localIdentName: '[local]__[hash:base64:5]'
-        } }
+      { test: /\.css$/, use: [ 
+        { loader: 'style-loader' },
+        { loader: 'css-loader' }
       ]}
+      // { test: /\.css$/, use: [ { loader: 'style-loader' } ,
+      //   { loader: 'css-loader', options: {
+      //     module: true,
+      //     sourceMap: true,
+      //     localIdentName: '[local]__[hash:base64:5]'
+      //   } }
+      // ]}
     ]
   },
 
