@@ -4,7 +4,7 @@ import StickyItem from './item';
 import StickyHeader from './header';
 import { StickyElement } from '../index';
 
-import './sticky-list.css';
+import * as styles from './sticky-list.css';
 
 export interface StickyListProps {
   className?: string;
@@ -153,14 +153,14 @@ export class StickyList extends React.Component<StickyListProps, State> {
     })
 
     inside.push(
-      <Waypoint 
+      <Waypoint key="down end waypoint"
         scrollableAncestor={this.container} 
         onPositionChange={this.handleScrollBottom}
       />
     );
 
     inside.unshift(
-      <Waypoint 
+      <Waypoint key="up end waypoint"
         scrollableAncestor={this.container} 
         onPositionChange={this.handleScrollTop}
       />
@@ -181,6 +181,7 @@ export class StickyList extends React.Component<StickyListProps, State> {
           {inside}
         </div>
         <div>{below}</div>
+        <style>{styles.toString()}</style>
       </div>
     )
   }
