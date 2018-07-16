@@ -33,17 +33,11 @@ export default class Demo extends React.PureComponent<{}, {}> {
 
   render() {
     const menu = this.renderMenu();
-    // console.log(menu)
 
     return (
       <StickyList>
        {menu}
       </StickyList>
     )
-    // return (
-    //   <div>
-    //     {menu}
-    //   </div>
-    // )
   }
 }
