@@ -100,5 +100,50 @@
         "price": 11.5
       }
     ]
+  },{
+    "header": "Chef's Specials",
+    "items": [
+      {
+        "title": "Orange Beef",
+        "description": "Crispy beef chunks sautéed in spicy orange sauce",
+        "price": 8.95
+      },{
+        "title": "Hot Crispy Beef",
+        "description": "Crispy shredded beef sautéed with carrots and celery in hot pepper sauce",
+        "price": 8.95
+      },{
+        "title": "Supreme Crispy Eggplant",
+        "description": "Sliced eggplant dipped in egg batter & fried till crispy then toss-fried in chef's spiced sauce",
+        "price": 10.95
+      },{
+        "title": "Mu Shu Pork",
+        "description": "Served with pancakes, the classic dish to roll your own",
+        "price": 12.75
+      },{
+        "title": "General Tso's Chicken",
+        "description": "General's favorite dish. Tender chunks of marinated boneless chicken sautéed in chef's red hot sauce",
+        "price": 8.95
+      },{
+        "title": "Tangerine Chicken",
+        "description": "Crispy chunks of boneless white meat chicken sautéed with peppers and orange curls in special sauce",
+        "price": 8.95
+      },{
+        "title": "Empress Chicken",
+        "description": "Chicken chunks dipped in egg batter and lightly fried, then sautéed in chef's delicious sauce. Served on a bad of steamed broccoli",
+        "price": 8.75
+      },{
+        "title": "Kung Pao Shrimp",
+        "description": "Baby shrimp sautéed in rich brown sauce with red pepper and peanuts",
+        "price": 8.5
+      },{
+        "title": "Manor Shrimp",
+        "description": "Delicately seasoned jumbo shrimp lightly battered, fried to a golden brown in natural sweet and sour sauce",
+        "price": 12.95
+      },{
+        "title": "Seafood Imperial",
+        "description": "Shrimp, crab & scallops blended together with hidden seasonings & baked to perfection",
+        "price": 15.95
+      }
+    ]
   }
 ]
