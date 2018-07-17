@@ -1,6 +1,7 @@
 import * as React from 'react';
 import StickyList from '../../src/sticky-list';
 import MenuItem from './menu-item';
+import MenuHeader from './menu-header';
 
 import * as json from './pizza.json';
 import * as styles from './demo.css';
@@ -25,7 +26,7 @@ export default class Demo extends React.PureComponent<{}, {}> {
     const menu:JSX.Element[] = [];
     if(!json || !json.length) return menu;
     return json.reduce((acc:JSX.Element[],menu:Menu) => {
-      const header = <header key={menu.header}>{menu.header}</header>;
+      const header = <header key={menu.header}><MenuHeader header={menu.header}/></header>;
       const items = menu.items.map(item => <MenuItem key={item.title} item={item}/>)
       return [...acc, header, ...items];
     },[])

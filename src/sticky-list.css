@@ -1,5 +1,5 @@
 .sticky-list {
-  height: 170px;
+  height: 250px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;

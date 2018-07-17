@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Condiment');
 .menu {
   max-width: 300px;
+}
+
+.menu-header {
+  font-size: 1.2rem;
+  font-family: 'Condiment', cursive;
 }
 
 .menu-item_container {
