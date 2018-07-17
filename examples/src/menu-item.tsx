@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as styles from './demo.css';
 
 interface IMenuItem {
   title: string;
@@ -17,9 +18,9 @@ export default class MenuItem extends React.PureComponent<Props, {}> {
     const numberFormat = new Intl.NumberFormat('en-US', options);
     const price = numberFormat.format(item.price);
     return (
-      <a className="menu-item_container" href="#" title={item.description}>
+      <a className={styles['menu-item_container']} href="#" title={item.description}>
         <div>{item.title}</div>
-        <div className="menu-item_spacer" />
+        <div className={styles['menu-item_spacer']} />
         <div>{price}</div>
       </a>
     )

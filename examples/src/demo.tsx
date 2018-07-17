@@ -35,11 +35,10 @@ export default class Demo extends React.PureComponent<{}, {}> {
     const menu = this.renderMenu();
 
     return (
-      <div>
+      <div className={styles.menu}>
         <StickyList>
         {menu}
         </StickyList>
-        <style>{styles.toString()}</style>
       </div>
     )
   }

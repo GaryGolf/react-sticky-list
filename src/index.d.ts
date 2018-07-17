@@ -1,10 +1,10 @@
-export interface StickyElement {
+declare interface StickyElement {
   idx: number;
   position: string;
   component: JSX.Element;
 }
 
-export interface StickyPosition {
+declare interface StickyPosition {
   idx: number;
   position: string;
 }

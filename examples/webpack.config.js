@@ -1,10 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 const mode = process.env.NODE_ENV;
+
+console.log('========',__dirname);
 
 module.exports = {
   mode: 'development',
@@ -51,8 +54,9 @@ module.exports = {
   },
 
   plugins: [
+    new CopyWebpackPlugin([{ from: './src/sticky-list.css', to: './' }]),
     new HtmlWebpackPlugin({ template: path.join(__dirname, './src/index.html') }),
-    new HtmlWebpackIncludeAssetsPlugin({ assets: ['../src/sticky-list.css'], append: true }),
+    new HtmlWebpackIncludeAssetsPlugin({ assets: ['./sticky-list.css'], append: true }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

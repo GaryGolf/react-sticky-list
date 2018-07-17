@@ -1,11 +1,22 @@
+.menu {
+  max-width: 300px;
+}
 
 .menu-item_container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-item_spacer {
+  flex-shrink: 10;
+  overflow: hidden;
+  margin: 0 1rem;
 }
 
 .menu-item_spacer:after {
-  content: "........................";
-  overflow: hidden;
+  content: "................................................";
 }

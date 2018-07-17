@@ -2,7 +2,7 @@
 
 // for style loader
 declare module '*.css' {
-  const styles: { toString:() => string };
+  const styles: any;
   export = styles;
 }
 
