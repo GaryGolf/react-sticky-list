@@ -34,7 +34,7 @@ module.exports = {
         }
       },
       { test: /\.css$/, use: [ 
-        { loader: 'style-loader' },
+        // { loader: 'style-loader' },
         { loader: 'css-loader' }
       ]}
       // { test: /\.css$/, use: [ { loader: 'style-loader' } ,
@@ -48,7 +48,9 @@ module.exports = {
   },
 
   plugins: [
+    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './' }]),
     new HtmlWebpackPlugin({ template: path.join(__dirname, './src/index.html') }),
+    new HtmlWebpackIncludeAssetsPlugin({ assets: ['../src/sticky-list.css'], append: true }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

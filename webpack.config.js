@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 const prodCilentConfig = {
   mode: 'production',
@@ -18,11 +20,13 @@ const prodCilentConfig = {
 
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      { test: /\.css$/, loader: 'css-loader' }
-      { test: /\.json$/, loader: 'json-loader' }
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' }
     ]
   },
+
+  plugins: [
+    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './' }])
+  ],
 
   externals: {
     'react': 'react',

@@ -1,0 +1,11 @@
+
+.menu-item_container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.menu-item_spacer:after {
+  content: "........................";
+  overflow: hidden;
+}

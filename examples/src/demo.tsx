@@ -1,20 +1,22 @@
 import * as React from 'react';
 import StickyList from '../../src/sticky-list';
+import MenuItem from './menu-item';
 
-import * as json from './pizza.json'
+import * as json from './pizza.json';
+import * as styles from './demo.css';
 
 
 interface Props {}
 
-interface MenuItem {
+interface IMenuItem {
   title: string;
   description: string;
   price: number;
-  novelty?: boolean;
+  //novelty?: boolean;
 }
 interface Menu {
   header: string;
-  items: MenuItem[];
+  items: IMenuItem[];
 }
 
 export default class Demo extends React.PureComponent<{}, {}> {
@@ -24,9 +26,7 @@ export default class Demo extends React.PureComponent<{}, {}> {
     if(!json || !json.length) return menu;
     return json.reduce((acc:JSX.Element[],menu:Menu) => {
       const header = <header key={menu.header}>{menu.header}</header>;
-      const items = menu.items.map(item => (
-        <div key={item.title}>{item.title}....{item.price}</div>
-      ))
+      const items = menu.items.map(item => <MenuItem key={item.title} item={item}/>)
       return [...acc, header, ...items];
     },[])
   }
@@ -35,9 +35,12 @@ export default class Demo extends React.PureComponent<{}, {}> {
     const menu = this.renderMenu();
 
     return (
-      <StickyList>
-       {menu}
-      </StickyList>
+      <div>
+        <StickyList>
+        {menu}
+        </StickyList>
+        <style>{styles.toString()}</style>
+      </div>
     )
   }
 }

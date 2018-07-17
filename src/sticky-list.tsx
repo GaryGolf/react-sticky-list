@@ -4,8 +4,6 @@ import StickyItem from './item';
 import StickyHeader from './header';
 import { StickyElement } from '../index';
 
-import * as styles from './sticky-list.css';
-
 export interface StickyListProps {
   className?: string;
   children: JSX.Element[];
@@ -181,7 +179,6 @@ export class StickyList extends React.Component<StickyListProps, State> {
           {inside}
         </div>
         <div>{below}</div>
-        <style>{styles.toString()}</style>
       </div>
     )
   }
