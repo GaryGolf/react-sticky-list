@@ -37,7 +37,7 @@ export default class Demo extends React.PureComponent<{}, {}> {
 
     return (
       <div className={styles.menu}>
-        <StickyList>
+        <StickyList shadows={false}>
         {menu}
         </StickyList>
       </div>

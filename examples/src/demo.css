@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Condiment');
+@import url('https://fonts.googleapis.com/css?family=Merienda+One|Rochester');
 .menu {
   max-width: 300px;
+  max-height: 200px;
 }
 
 .menu-header {
-  font-size: 1.2rem;
-  font-family: 'Condiment', cursive;
+  font-family: 'Merienda One', cursive;
+  cursor: pointer;
 }
 
 .menu-item_container {
@@ -14,6 +15,7 @@
   justify-content: space-between;
   white-space: nowrap;
   text-decoration: none;
+  font-family: 'Rochester', cursive;
   cursor: pointer;
 }
 
