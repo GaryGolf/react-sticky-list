@@ -5,14 +5,10 @@ interface Props {
   header: string;
 }
 
-export default class MenuItem extends React.PureComponent<Props, {}> {
-  render() {
-    const { header } = this.props;
-    
-    return (
-      <div className={styles['menu-header']}>
-        {this.props.header}
-      </div>
-    )
-  }
-}
+const MenuHeader:React.SFC<Props> = props => (
+  <div className={styles['menu-header']}>
+    {props.header}
+  </div>
+);
+
+export default MenuHeader;
