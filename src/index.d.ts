@@ -11,7 +11,7 @@ export interface StickyPosition {
   position: string;
 }
 
-export interface StickyListProps {
+export declare interface StickyListProps {
   className?: string;
   children: JSX.Element[];
   shadows?: boolean;
@@ -19,3 +19,5 @@ export interface StickyListProps {
   onScrollBottom?: (isInside:boolean) => void;
   getScrollContainerRef?: (div:HTMLDivElement) => void;
 }
+
+export default class StickyList extends React.PureComponent<StickyListProps> {}
