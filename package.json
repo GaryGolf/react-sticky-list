@@ -9,6 +9,7 @@
   "scripts": {
     "start": "NODE_ENV=demo webpack-dev-server --config ./examples/webpack.config.js --hot",
     "build": "webpack",
+    "dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
