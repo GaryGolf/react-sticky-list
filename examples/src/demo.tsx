@@ -36,11 +36,9 @@ export default class Demo extends React.PureComponent<{}, {}> {
     const menu = this.renderMenu();
 
     return (
-      <div className={styles.menu}>
-        <StickyList shadows={false}>
+      <StickyList className={styles.menu}>
         {menu}
-        </StickyList>
-      </div>
+      </StickyList>
     )
   }
 }

@@ -20,7 +20,7 @@ interface State {
 }
 
 export class StickyList extends React.Component<StickyListProps, State> {
-  static defaultProps = { className: '', shadows: true };
+  static defaultProps = { className: '', shadows: false };
   private container: HTMLDivElement;
 
   public constructor(props:StickyListProps) {
