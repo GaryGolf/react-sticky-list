@@ -7,8 +7,6 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 
 const mode = process.env.NODE_ENV;
 
-console.log('========',__dirname);
-
 module.exports = {
   mode: 'development',
   entry: './examples/src/index.tsx',
@@ -59,9 +57,7 @@ module.exports = {
     new HtmlWebpackIncludeAssetsPlugin({ assets: ['./sticky-list.css'], append: true }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(false)
-    })
+    new webpack.DefinePlugin({ PRODUCTION: JSON.stringify(false) })
   ]
 };
 
