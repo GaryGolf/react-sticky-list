@@ -2,16 +2,9 @@ import * as React from 'react';
 import Waypoint from 'react-waypoint';
 import StickyItem from './item';
 import StickyHeader from './header';
-import { StickyElement } from '../index';
+import { StickyListProps, StickyElement } from './index';
 
-export interface StickyListProps {
-  className?: string;
-  children: JSX.Element[];
-  shadows?: boolean;
-  onScrollTop?: (isInside:boolean) => void;
-  onScrollBottom?: (isInside:boolean) => void;
-  getScrollContainerRef?: (div:HTMLDivElement) => void;
-}
+
 
 interface State {
   elements: StickyElement[];
@@ -19,7 +12,7 @@ interface State {
   isBottom: boolean;
 }
 
-export class StickyList extends React.Component<StickyListProps, State> {
+export default class StickyList extends React.Component<StickyListProps, State> {
   static defaultProps = { className: '', shadows: false };
   private container: HTMLDivElement;
 
@@ -183,5 +176,3 @@ export class StickyList extends React.Component<StickyListProps, State> {
     )
   }
 }
-
-export default StickyList;

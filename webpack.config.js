@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const prodCilentConfig = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: './src/sticky-list.tsx',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
