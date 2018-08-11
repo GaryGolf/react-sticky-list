@@ -60,4 +60,3 @@ module.exports = {
     new webpack.DefinePlugin({ PRODUCTION: JSON.stringify(false) })
   ]
 };
-
