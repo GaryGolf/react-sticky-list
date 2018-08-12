@@ -9,7 +9,6 @@ interface Props {
 const StickyItem:React.SFC<Props> = props =>{
 
   const { idx, component } = props.element;
-
   const handleClick = (event:React.MouseEvent<HTMLDivElement>) => {
     component.props.onClick && component.props.onClick(event)
     props.onClick(idx);
